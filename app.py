@@ -72,7 +72,7 @@ elif selected_mode == "Data Analysis Concepts":
     )
     full_prompt = f"You are a helpful assistant who always sticks to the Role and the Guardrails shared with you. Role: {prompt_prefix} User Query:{user_input}"
 
-guardrails = "Guardrails; Make sure you are only sticking to the topic mentioned in the Role. If the user asks something which is not in the role, then say 'Sorry, I cannot answer it.' "
+guardrails = "Guardrails; Make sure you are only sticking to the topic mentioned in the Role and also not answer questions related to dishes and cooking. If the user asks something which is not in the role, then say 'Sorry, I cannot answer it.' "
 full_prompt += guardrails
 
 # Button to trigger the LLM
