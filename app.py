@@ -18,7 +18,7 @@ model = genai.GenerativeModel('gemini-2.0-flash')
 # --- Streamlit UI ---
 st.set_page_config(page_title="Student Helper LLM", layout="wide")
 
-st.title("📚 Student Helper LLM")
+st.title("📚 AI Teacher")
 st.markdown("Your personal AI assistant for coding, learning, and data analysis!")
 
 # Router in the sidebar
