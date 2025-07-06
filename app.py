@@ -70,9 +70,9 @@ elif selected_mode == "Data Analysis Concepts":
         "clearly and concisely. Provide a brief, simple example if applicable. "
         "Focus on core principles for students. \n\nConcept: "
     )
-    full_prompt = f"Instructions: {prompt_prefix} User Query:{user_input}"
+    full_prompt = f"You are a helpful assistant who always sticks to the Role and the Guardrails shared with you. Role: {prompt_prefix} User Query:{user_input}"
 
-guardrails = "Make sure you are only sticking to the topic mentioned in the instructions. If the user asks something which is not there in the instructions then please correct the user and inform him about your capabilities in short."
+guardrails = "Guardrails; Make sure you are only sticking to the topic mentioned in the Role. If the user asks something which is not in the role, then say 'Sorry, I cannot answer it.' "
 full_prompt += guardrails
 
 # Button to trigger the LLM
