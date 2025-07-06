@@ -6,7 +6,7 @@ API_KEY = os.getenv('GOOGLE_API_KEY')
 
 # Configure the Gemini API
 try:
-    genai.configure(api_key=data['GOOGLE_API_KEY'])
+    genai.configure(api_key=API_KEY)
 except Exception as e:
     st.error(f"Failed to configure Gemini API. Please check your API key. Error: {e}")
     st.stop() # Stop the app if API key is invalid or missing
