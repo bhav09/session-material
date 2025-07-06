@@ -16,7 +16,7 @@ except Exception as e:
 model = genai.GenerativeModel('gemini-2.0-flash')
 
 # --- Streamlit UI ---
-st.set_page_config(page_title="Student Helper LLM", layout="wide")
+st.set_page_config(page_title="Data Science Help", layout="wide")
 
 st.title("📚 AI Teacher")
 st.markdown("Your personal AI assistant for coding, learning, and data analysis!")
@@ -37,7 +37,7 @@ st.sidebar.markdown("- Click 'Get Explanation' to see the AI's response.")
 # Main content area based on selected mode
 user_input = ""
 if selected_mode == "Code Debugger":
-    st.header("🐛 Code Debugger")
+    st.subheader("🐛 Code Debugger")
     st.markdown("Paste your Python code below, and I'll help you find and fix errors.")
     user_input = st.text_area("Enter your Python code here:", height=300, placeholder="def my_function(x):\n  return x + y # This will cause an error!")
     prompt_prefix = (
@@ -51,7 +51,7 @@ if selected_mode == "Code Debugger":
     full_prompt = f"{prompt_prefix}{user_input}{prompt_suffix}"
 
 elif selected_mode == "Topic Explainer":
-    st.header("💡 Topic Explainer")
+    st.subheader("💡 Topic Explainer")
     st.markdown("Enter any complex topic, and I'll explain it with simple examples.")
     user_input = st.text_input("Enter the topic you want to understand:", placeholder="Quantum Entanglement")
     prompt_prefix = (
@@ -62,7 +62,7 @@ elif selected_mode == "Topic Explainer":
     full_prompt = f"{prompt_prefix}{user_input}"
 
 elif selected_mode == "Data Analysis Concepts":
-    st.header("📊 Data Analysis Concepts")
+    st.subheader("📊 Data Analysis Concepts")
     st.markdown("Ask about any data analysis concept, and I'll explain it clearly.")
     user_input = st.text_input("Enter the data analysis concept:", placeholder="What is p-value?")
     prompt_prefix = (
