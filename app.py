@@ -1,12 +1,13 @@
 import streamlit as st
 import google.generativeai as genai
 import json
+import os
 
-with open('/content/credentials.json') as file:
-  data = json.load(file)
-  GOOGLE_API_KEY = data['GOOGLE_API_KEY']
+# with open('/content/credentials.json') as file:
+#   data = json.load(file)
+#   GOOGLE_API_KEY = data['GOOGLE_API_KEY']
 
-# print(GOOGLE_API_KEY)
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
 # Configure Google Gemini API
 try:
