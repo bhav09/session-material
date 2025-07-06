@@ -70,7 +70,10 @@ elif selected_mode == "Data Analysis Concepts":
         "clearly and concisely. Provide a brief, simple example if applicable. "
         "Focus on core principles for students. \n\nConcept: "
     )
-    full_prompt = f"{prompt_prefix}{user_input}"
+    full_prompt = f"Instructions: {prompt_prefix} User Query:{user_input}"
+
+guardrails = "Make sure you are only sticking to the topic mentioned in the instructions. If the user asks something which is not there in the instructions then please correct the user and inform him about your capabilities in short."
+full_prompt += guardrails
 
 # Button to trigger the LLM
 if st.button("Get Explanation", type="primary"):
